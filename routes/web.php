@@ -22,11 +22,9 @@ use App\Http\Controllers\ReporteController;
 Route::get('/', function () {
     return redirect()->route('login');  // Redirige a la ruta de login
 });
-Route::get('ventas/{venta}/show', [VentaController::class, 'show'])->name('ventas.show');
 Route::get('/cobros/{venta}/create', [CobroController::class, 'create'])->name('cobros.create');
 Route::post('cobros', [CobroController::class, 'store'])->name('cobros.store');
 Route::get('cobros', [CobroController::class, 'index'])->name('cobros.index');
-Route::put('/ventas/{venta}/anular', [VentaController::class, 'anular'])->name('ventas.anular');
 
 
 
@@ -42,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('productos', \App\Http\Controllers\ProductoController::class);
     Route::resource('clientes', \App\Http\Controllers\ClienteController::class);
     Route::resource('ventas', \App\Http\Controllers\VentaController::class);
+    
     
 });
 
