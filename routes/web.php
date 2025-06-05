@@ -23,9 +23,6 @@ Route::get('/', function () {
     return redirect()->route('login');  // Redirige a la ruta de login
 });
 Route::get('ventas/{venta}/show', [VentaController::class, 'show'])->name('ventas.show');
-Route::get('/productos/{producto}/editar', [ProductoController::class, 'edit'])->name('productos.edit');
-Route::put('/productos/{producto}', [ProductoController::class, 'update'])->name('productos.update');
-Route::delete('/productos/{producto}', [ProductoController::class, 'destroy'])->name('productos.destroy');
 Route::get('/cobros/{venta}/create', [CobroController::class, 'create'])->name('cobros.create');
 Route::post('cobros', [CobroController::class, 'store'])->name('cobros.store');
 Route::get('cobros', [CobroController::class, 'index'])->name('cobros.index');
